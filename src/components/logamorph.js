@@ -41,7 +41,7 @@ const Monster = () => {
      });
     // 
     useEffect(() =>{
-        
+        console.log("usdfeffect")
         let mounted = true
         getAPIData().then((items) => {
            
@@ -77,6 +77,7 @@ const Monster = () => {
     const handleClick1 = () => {
       // Counter state is incremented
         doPostRequest(1)
+        alert("Please Refresh Page");
     } 
     
     // Function is called everytime decrement button is clicked
@@ -84,17 +85,7 @@ const Monster = () => {
       // Counter state is decremented
       eatCarrot()
     }
-    const handleClick3 = (counter) => {
-    //     // Counter state is decremented
-        
-    //     async function drop(){ axios.delete(`${API_POST_URL_DELETE}${15}`) // <-- remove ;
-    //     .then(res => {
-    //     const users = res.data;
-    //     console.log(users)
-    //     })
-    //   }
-    //   drop()
-    }
+    
     
     
     return (
@@ -138,20 +129,10 @@ const Monster = () => {
             color: 'white',
           }}
             onClick={handleClick2}>EAT CARROTS</button>
-            <button style={{
-            fontSize: '60%',
-            position: 'relative',
-            top: '20vh',
-            marginLeft: '5px',
-            backgroundColor: 'red',
-            borderRadius: '8%',
-            color: 'white',
-          }}
-            onClick={handleClick3(counter)}>RESET</button>
+           
         </div>
-        <div>   
         FARM
-        </div>
+        <div>   
         <div style={{
           fontSize: '120%',
           position: 'relative',
@@ -160,6 +141,8 @@ const Monster = () => {
           {counter.grown}
         </div>
       </div>
+    </div>
+
     )
   }
     
